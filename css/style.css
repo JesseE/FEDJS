@@ -1,0 +1,7 @@
+article > section {
+	display:none;
+}
+
+article > .active {
+	display:block;
+}

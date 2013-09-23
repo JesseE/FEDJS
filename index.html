@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Score App</title>
+	<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	<header>
+		<h1>Web Application Skeleton</h1>
+		<nav>
+			<ul>
+				<li><a href="#/game">Game</a></li>
+				<li><a href="#/schedule">Schedule</a></li>
+				<li><a href="#/ranking">Ranking</a></li>
+		    </ul>
+		</nav>
+	</header>
+
+	<article id="content" class="col">
+		<section data-route="game" class="active">
+			<section data-bind="games">
+				<section>
+					<p data-bind="score"></p>
+					<p data-bind="team1"></p>
+				</section>
+			</section>
+		</section>
+
+		<section data-route="schedule">
+			<section data-bind="schedules">
+				<section>
+					<p data-bind="date"></p>
+					<p data-bind="team1"></p>
+				</section>
+			</section>
+		</section>
+
+		<section data-route="ranking">
+			<section data-bind="rankings">
+				<section>
+					<p data-bind="team"></p>
+					<p data-bind="Win"></p>
+				</section>
+			</section>
+		</section>
+	</article>
+
+
+
+
+	<!--Libraries hier toevoegen-->
+	<script src="js/libs/routie.min.js"></script>
+	<script src="js/libs/ready.min.js"></script>
+	<script src="js/libs/qwery.min.js"></script>
+	<script src="js/libs/transparancy.min.js"></script>
+
+	<!--Application hier toevoegen-->
+	<script src="js/scoreapp.js"></script>
+</body>
+</html>
