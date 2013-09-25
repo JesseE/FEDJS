@@ -18,32 +18,74 @@
 		</nav>
 	</header>
 
-	<article id="content" class="col">
+	<article>
 		<section data-route="game" class="active">
-			<section data-bind="games">
-				<section>
-					<p data-bind="score"></p>
-					<p data-bind="team1"></p>
-				</section>
-			</section>
+			<table>
+				<thead>
+					<th>Score</th>
+                    <th>Team 1</th>
+                    <th>Points T1</th>
+                    <th>Points T2</th>
+                    <th>Team2</th>
+				</thead>
+				<tbody data-bind="games">
+					<tr>
+		                <td data-bind="score"></td>
+		                <td data-bind="team1"></td>
+		                <td data-bind="team1Score"></td>
+		                <td data-bind="team2Score"></td>
+		                <td data-bind="team2"></td>		                
+	            	</tr>					
+				</tbody>
+			</table>
 		</section>
 
 		<section data-route="schedule">
-			<section data-bind="schedules">
-				<section>
-					<p data-bind="date"></p>
-					<p data-bind="team1"></p>
-				</section>
-			</section>
+			<table>
+				<thead>
+					<th>Date</th>
+                    <th>Team 1</th>
+                    <th>Points T1</th>
+                    <th>Points T2</th>
+                    <th>Team2</th>
+				</thead>
+				<tbody data-bind="schedules">
+					<tr>
+		                <td data-bind="date"></td>
+		                <td data-bind="team1"></td>
+		                <td data-bind="team1Score"></td>
+		                <td data-bind="team2Score"></td>
+		                <td data-bind="team2"></td>		                
+	            	</tr>					
+				</tbody>
+			</table>
 		</section>
 
 		<section data-route="ranking">
-			<section data-bind="rankings">
-				<section>
-					<p data-bind="team"></p>
-					<p data-bind="Win"></p>
-				</section>
-			</section>
+			<table>
+				<thead>
+					<th>Team</th>
+                    <th>Win</th>
+                    <th>Lose</th>
+                    <th>Points Won</th>
+                    <th>Points Lost</th>
+                    <th>Sw</th>
+                    <th>Sl</th>
+
+				</thead>
+				<tbody data-bind="rankings">
+					<tr>
+		                <td data-bind="team"></td>
+		                <td data-bind="Win"></td>
+		                <td data-bind="Lost"></td>
+		                <td data-bind="Pw"></td>
+		                <td data-bind="Pl"></td>
+		                <td data-bind="Sw"></td>		                
+		                <td data-bind="Sl"></td>		                
+		                
+	            	</tr>					
+				</tbody>
+			</table>		
 		</section>
 	</article>
 

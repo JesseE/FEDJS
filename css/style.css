@@ -5,3 +5,12 @@ article > section {
 article > .active {
 	display:block;
 }
+
+th {
+	text-align: center;
+	padding: 5px 60px;
+}
+
+td {
+	text-align: center;
+}
