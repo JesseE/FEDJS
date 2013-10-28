@@ -85,9 +85,31 @@ SCOREAPP.page = {
 			break;
 			
 			case 'schedule':
-			$$.get('https://api.leaguevine.com/v1/pools/19222/?access_token=52b1add650', {}, function(data){
-				console.log(data);
-			});
+			+			$$.ajax({
++				type: 'GET',
++				url: "https://api.leaguevine.com/v1/pools/?tournament_id=19389&access_token=5397f697c0",
++				data: data,
++				dataType: 'json',
++				async: true,
++				success:function(data){
++				// put all the data into an empty array
++				var scheduleData = [];								
++						for (var i = data.objects.length - 1; i >= 0; i--) {
++							scheduleData.push(data.objects[i]);	
++							//push de data into schedule data Array
++						}
++				//javascript template with mustache.js
++				var scheduleTemplate = 
++					'{{#scheduleData}}<tr class="schedulelist"><td>{{name}}</td>{{#standings}}{{#team}}<td>{{name}}</td>{{/team}}{{/standings}}</tr>{{/scheduleData}}';
++				//apply to html 	
++				var html = Mustache.to_html(scheduleTemplate, {scheduleData : scheduleData});
++				$$('#scheduletable').html(html);
++
++					
++				console.log(scheduleData);
++			}
+ 			});
+
 			data = SCOREAPP.schedule;
 			break;
 			
